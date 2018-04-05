@@ -1,6 +1,22 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="#">Angular Notes</a>
-</nav>
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+    <button mat-button [matMenuTriggerFor]="menu">MENU</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Option 1</button>
+      <button mat-menu-item>Option 2</button>
+    </mat-menu>
+    <span class="example-spacer"></span>
+    <button mat-icon-button>
+        <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+      </button>
+    <i class="material-icons">verified_user</i>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
 <div class="container-fluid text-center pb-5">
   <div style="text-align:center">
     <h1>
@@ -10,11 +26,13 @@
 </div>
 
 
-<div class="container-fluid text-center pb-5">
+<!-- <div class="container-fluid text-center pb-5">
   <div class="row">
     <app-card class="col-4"></app-card>
     <app-card class="col-4"></app-card>
     <app-card class="col-4"></app-card>
   </div>
-</div>
+</div> -->
+
+<!-- <button mat-button>Material Button</button> -->
 
