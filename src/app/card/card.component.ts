@@ -9,7 +9,10 @@ export class CardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  addToNotifications() {
+    console.log('notification added');
   }
 
 }
