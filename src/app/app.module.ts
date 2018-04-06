@@ -1,13 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
 
 
-import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
-import { CardListComponent } from './card-list/card-list.component';
+import { AppComponent } from './app.component'
+import { CardComponent } from './card/card.component'
+import { CardListComponent } from './card-list/card-list.component'
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialAppModule } from './ngmaterial.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MaterialAppModule } from './ngmaterial.module'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MaterialAppModule } from './ngmaterial.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialAppModule
+    MaterialAppModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

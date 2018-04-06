@@ -7,12 +7,59 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  private notificationName: string
+  private notificationLastName: string
+  private notificationText: string
+
+  constructor() {
+    this.notificationName = '',
+      this.notificationLastName = '',
+      this.notificationText = ''
+  }
 
   ngOnInit() { }
 
-  addToNotifications() {
-    console.log('notification added');
+  private addNotification(): void {
+
+    let dataObject = {}
+    dataObject.name = this.notificationName;
+    dataObject.lastName = this.notificationLastName;
+    dataObject.text = this.notificationText;
+
+    console.log('DATAOBJECT: ', dataObject)
+
+    this.notificationName = ''
+    this.notificationLastName = ''
+    this.notificationText = ''
+
+    const showName = 'dataObject.name'
   }
 
+  dupa = 'dukpa'
+
 }
+
+
+//   handleName(event) {
+//     console.log('Imie:', event.target.value)
+
+//     return event.target.value
+//   }
+
+//   handleLastname(event) {
+//     console.log('Nazwisko:', event.target.value)
+//   }
+
+//   handleNotification(event) {
+//     console.log('Treść:', event.target.value)
+//   }
+
+//   addToNotifications() {
+//     console.log('notification added')
+
+//   }
+
+
+
+
+
