@@ -22,16 +22,13 @@ export class CardComponent implements OnInit {
 
   public addNotification(): void {
 
-
-
-
     let dataObject = {}
     dataObject.name = this.notificationName;
     dataObject.lastName = this.notificationLastName;
     dataObject.text = this.notificationText;
 
     console.log('DATAOBJECT: ', dataObject)
-    this.cardsServiceService.addNotification(dataObject.name, dataObject.lastName, dataObject.notificationText)
+    this.cardsServiceService.addNotification(dataObject.name, dataObject.lastName, dataObject.text)
     this.notificationName = ''
     this.notificationLastName = ''
     this.notificationText = ''

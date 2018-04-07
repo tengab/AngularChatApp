@@ -16,9 +16,9 @@ export class CardsServiceService {
       this.nextId = 2
   }
 
-  public addNotification(name: string, lastName: string, text: string): void {
+  public addNotification(name: string, lastName: string, content: string): void {
     console.log(this.notifications)
-    let notification = new Notification(this.nextId, name, lastName, text)
+    let notification = new Notification(this.nextId, name, lastName, content)
     this.notifications.push(notification)
     this.nextId++
   }
