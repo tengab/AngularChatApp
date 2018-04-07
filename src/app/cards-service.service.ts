@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Notification } from './classes/notification'
 
-
 @Injectable()
 export class CardsServiceService {
 
@@ -9,16 +8,13 @@ export class CardsServiceService {
   private nextId: number
 
   constructor() {
-    this.notifications = [
-      new Notification(0, 'Tomek', 'Banani', 'Lorem Ipsum'),
-      new Notification(1, 'Paweł', 'Gałek', ' Duis aute irure dolor')
-    ],
-      this.nextId = 2
+    this.notifications = [],
+      this.nextId = 0
   }
 
-  public addNotification(name: string, lastName: string, content: string): void {
-    console.log(this.notifications)
-    let notification = new Notification(this.nextId, name, lastName, content)
+  public addNotification(name: string, lastName: string, text: string): void {
+
+    let notification = new Notification(this.nextId, name, lastName, text)
     this.notifications.push(notification)
     this.nextId++
   }

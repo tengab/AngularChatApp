@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {CardsServiceService} from './cards-service.service'
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,10 +8,7 @@ import {CardsServiceService} from './cards-service.service'
 })
 export class AppComponent {
  
-
   constructor (private cardsServiceService: CardsServiceService) {
-    
-  }
 
-  title = 'app'
+  }
 }

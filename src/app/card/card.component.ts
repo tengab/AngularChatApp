@@ -27,7 +27,6 @@ export class CardComponent implements OnInit {
     dataObject.lastName = this.notificationLastName;
     dataObject.text = this.notificationText;
 
-    console.log('DATAOBJECT: ', dataObject)
     this.cardsServiceService.addNotification(dataObject.name, dataObject.lastName, dataObject.text)
     this.notificationName = ''
     this.notificationLastName = ''

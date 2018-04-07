@@ -1,5 +1,4 @@
 <mat-toolbar color="primary">
-
   <mat-toolbar-row>
     <button mat-button [matMenuTriggerFor]="menu">MENU</button>
     <mat-menu #menu="matMenu">
@@ -14,83 +13,20 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-
 <div class="container-fluid text-center pb-5">
   <div style="text-align:center">
     <h1>
-      Lista powiadomień z {{title}}!
+      Lista powiadomień
     </h1>
   </div>
 </div>
 
 <br/>
 <br/>
-<br/>
 
 <div>
   <app-card></app-card>
-<div *ngFor='let notification of cardsServiceService.getNotifications()'>
-  <app-notification-item [notification]='notification' ></app-notification-item>
-
-</div>
-
-</div>
-
-
-
-
-
-<!-- <mat-card>
-  <mat-card-header>
-    <mat-card-title>
-      <strong>Imie</strong>
-    </mat-card-title>
-    <mat-card-title>
-      <strong>Nazwisko</strong>
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      Powiadomienie Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="primary">Primary</button>
-  </mat-card-actions>
-</mat-card>
-
-<mat-card>
-    <mat-card-header>
-      <mat-card-title>
-        <strong>Imie</strong>
-      </mat-card-title>
-      <mat-card-title>
-        <strong>Nazwisko</strong>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        Powiadomienie Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary">usuń</button>
-    </mat-card-actions>
-  </mat-card> -->
-
-
-<!-- <div class="container-fluid text-center pb-5">
-  <div class="row">
-    <app-card class="col-4"></app-card>
-    <app-card class="col-4"></app-card>
-    <app-card class="col-4"></app-card>
+  <div *ngFor='let notification of cardsServiceService.getNotifications()'>
+    <app-notification-item [notification]='notification'></app-notification-item>
   </div>
-</div> -->
-
-<!-- <button mat-button>Material Button</button> -->
+</div>
