@@ -11,5 +11,11 @@ export class AppComponent {
   constructor (public cardsServiceService: CardsServiceService) {
 
   }
+
+// authCheck = () => {
+//   if (localStorage.getItem('isAuthorized')) {
+// return 'DUPA'
+//   }
+
 }
 

@@ -15,6 +15,12 @@ export class DialogModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  consequencesOfLogin(): void {
+    this.dialogRef.close();
+    console.log('Zalogowano',)
+    localStorage.setItem('isAuthorized', 'true')
+  }
+
   ngOnInit() {
   }
 

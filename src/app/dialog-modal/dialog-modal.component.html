@@ -1,8 +1,8 @@
 <mat-form-field>
-  <input type='text' [(ngModel)]='notificationName' value={{notificationName}} matInput placeholder="Login">
+  <input type='text' [(ngModel)]='loginName' value={{loginName}} matInput placeholder="Login">
 </mat-form-field>
 <br/>
 <mat-form-field>
-  <input type='password' [(ngModel)]='notificationLastName' value={{notificationLastName}} matInput placeholder="Hasło">
+  <input type='password' matInput placeholder="Hasło">
 </mat-form-field>
-<button class="add-button" mat-raised-button color="primary"  >ZALOGUJ</button>
+<button class="add-button" mat-raised-button color="primary" (click)='consequencesOfLogin()' >ZALOGUJ</button>
