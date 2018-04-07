@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component'
 import { CardComponent } from './card/card.component'
 import { CardListComponent } from './card-list/card-list.component'
+import {CardsServiceService} from './cards-service.service'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialAppModule } from './ngmaterial.module'
@@ -22,7 +23,9 @@ import { MaterialAppModule } from './ngmaterial.module'
     MaterialAppModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    CardsServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
