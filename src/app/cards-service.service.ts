@@ -4,8 +4,8 @@ import { Notification } from './classes/notification'
 @Injectable()
 export class CardsServiceService {
 
-  private notifications: Notification[]
-  private nextId: number
+  public notifications: Notification[]
+  public nextId: number
 
   constructor() {
     this.notifications = [],

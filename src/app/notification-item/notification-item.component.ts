@@ -11,9 +11,9 @@ export class NotificationItemComponent implements OnInit {
 
 
   @Input()
-  private notification: Notification
+  public notification: Notification
 
-  constructor(private cardsServiceService: CardsServiceService) { }
+  constructor(public cardsServiceService: CardsServiceService) { }
 
   ngOnInit() {
   }

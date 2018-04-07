@@ -8,11 +8,11 @@ import { CardsServiceService } from '../cards-service.service'
 })
 export class CardComponent implements OnInit {
 
-  private notificationName: string
-  private notificationLastName: string
-  private notificationText: string
+  public notificationName: string
+  public notificationLastName: string
+  public notificationText: string
 
-  constructor(private cardsServiceService: CardsServiceService) {
+  constructor(public cardsServiceService: CardsServiceService) {
     this.notificationName = '',
       this.notificationLastName = '',
       this.notificationText = ''
@@ -22,10 +22,11 @@ export class CardComponent implements OnInit {
 
   public addNotification(): void {
 
-    let dataObject = {}
-    dataObject.name = this.notificationName;
-    dataObject.lastName = this.notificationLastName;
-    dataObject.text = this.notificationText;
+    let dataObject: { name: string; lastName: string; text: string }  = {
+    name: this.notificationName,
+    lastName: this.notificationLastName,
+    text: this.notificationText
+    }
 
     this.cardsServiceService.addNotification(dataObject.name, dataObject.lastName, dataObject.text)
     this.notificationName = ''

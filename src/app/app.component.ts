@@ -8,7 +8,7 @@ import {CardsServiceService} from './cards-service.service'
 })
 export class AppComponent {
  
-  constructor (private cardsServiceService: CardsServiceService) {
+  constructor (public cardsServiceService: CardsServiceService) {
 
   }
 }
