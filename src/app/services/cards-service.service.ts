@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Notification } from './classes/notification'
+import { Notification } from '../classes/notification'
 
 @Injectable()
 export class CardsServiceService {

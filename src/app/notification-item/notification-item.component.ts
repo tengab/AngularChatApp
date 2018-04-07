@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Notification } from '../classes/notification'
-import {CardsServiceService} from '../cards-service.service'
+import {CardsServiceService} from '../services/cards-service.service'
 
 @Component({
   selector: 'app-notification-item',

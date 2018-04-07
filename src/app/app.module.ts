@@ -5,19 +5,23 @@ import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component'
 import { CardComponent } from './card/card.component'
-import { CardListComponent } from './card-list/card-list.component'
-import {CardsServiceService} from './cards-service.service'
+
+import { CardsServiceService } from './services/cards-service.service'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialAppModule } from './ngmaterial.module';
-import { NotificationItemComponent } from './notification-item/notification-item.component'
+import { NotificationItemComponent } from './notification-item/notification-item.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { DialogModalComponent } from './dialog-modal/dialog-modal.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    CardListComponent,
-    NotificationItemComponent
+    NotificationItemComponent,
+    DialogComponent,
+    DialogModalComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,7 @@ import { NotificationItemComponent } from './notification-item/notification-item
   providers: [
     CardsServiceService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogModalComponent]
 })
 export class AppModule { }
