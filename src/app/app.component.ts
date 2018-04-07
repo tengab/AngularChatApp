@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CardsServiceService} from './cards-service.service'
 
 
 @Component({
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+ 
+
+  constructor (private cardsServiceService: CardsServiceService) {
+    
+  }
+
   title = 'app'
 }

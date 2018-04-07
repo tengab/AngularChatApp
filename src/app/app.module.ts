@@ -9,13 +9,15 @@ import { CardListComponent } from './card-list/card-list.component'
 import {CardsServiceService} from './cards-service.service'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MaterialAppModule } from './ngmaterial.module'
+import { MaterialAppModule } from './ngmaterial.module';
+import { NotificationItemComponent } from './notification-item/notification-item.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    CardListComponent
+    CardListComponent,
+    NotificationItemComponent
   ],
   imports: [
     BrowserModule,
