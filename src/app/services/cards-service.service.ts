@@ -17,6 +17,7 @@ export class CardsServiceService {
     let notification = new Notification(this.nextId, name, lastName, text)
     this.notifications.push(notification)
     this.nextId++
+    console.log('NOTIFICATION', notification)
   }
 
   public getNotifications(): Notification[] {
