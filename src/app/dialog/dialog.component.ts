@@ -9,7 +9,6 @@ import {DialogModalComponent} from '../dialog-modal/dialog-modal.component'
 })
 export class DialogComponent implements OnInit {
 
-  animal: string;
   name: string;
 
   constructor(public dialog: MatDialog) {}
@@ -17,13 +16,11 @@ export class DialogComponent implements OnInit {
   openDialog(): void {
     let dialogRef = this.dialog.open(DialogModalComponent, {
       width: '250px',
-      data: { name: this.name, animal: this.animal }
+      data: { name: this.name }
+      
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      
-      this.animal = result;
-    });
+  
   }
 
   ngOnInit() {

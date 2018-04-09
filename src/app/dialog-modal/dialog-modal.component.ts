@@ -7,21 +7,28 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class DialogModalComponent implements OnInit {
 
+  public loginName: string;
+
   constructor(
+    
     public dialogRef: MatDialogRef<DialogModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any) { 
+      this.loginName = ''
+    }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
   consequencesOfLogin(): void {
-    this.dialogRef.close();
-    console.log('Zalogowano',)
     localStorage.setItem('isAuthorized', 'true')
+    localStorage.setItem('loginName', this.loginName)
+    this.dialogRef.close();
+    console.log('Zalogowano', this.loginName)
+    location.reload();
+
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

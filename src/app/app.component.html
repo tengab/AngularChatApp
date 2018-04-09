@@ -2,34 +2,50 @@
   <mat-toolbar-row>
     <button mat-button [matMenuTriggerFor]="menu">MENU</button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item><app-dialog></app-dialog>
+      <button mat-menu-item>
+        <app-dialog></app-dialog>
       </button>
-     
     </mat-menu>
     <span class="example-spacer"></span>
     <button mat-icon-button>
       <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
     </button>
     <!-- <i class="material-icons">verified_user</i> -->
-  
   </mat-toolbar-row>
 </mat-toolbar>
 
 <div class="container-fluid text-center pb-5">
-  <div style="text-align:center">
-    <h1>
-      Lista powiadomień
-    </h1>
+  <div style="text-align:right">
+
+    <div *ngIf="isAuthorized !== 'true', else sayHello">
+      <div>
+        <app-dialog></app-dialog>
+      </div>
+    </div>
+    <ng-template #sayHello>
+      <h2>
+        Witaj {{loginName}}
+      </h2>
+    </ng-template>
   </div>
 </div>
 
-<br/>
-<br/>
-
-<div>
-  <app-card></app-card>
-  <div *ngFor='let notification of cardsServiceService.getNotifications()'>
-    <app-notification-item [notification]='notification'></app-notification-item>
+<div class="container-fluid text-center pb-5">
+  <div style="text-align:center">
+    <h2>
+      Dodaj powiadomienie
+    </h2>
   </div>
-
-
+</div>
+<br/>
+<app-card></app-card>
+<div class="container-fluid text-center pb-5">
+  <div style="text-align:center">
+    <h2>
+      Lista powiadomień:
+    </h2>
+  </div>
+</div>
+<div *ngFor='let notification of cardsServiceService.getNotifications()'>
+  <app-notification-item [notification]='notification'></app-notification-item>
+</div>

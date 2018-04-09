@@ -7,15 +7,12 @@ import {CardsServiceService} from './services/cards-service.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
+  loginName: string = localStorage.getItem('loginName')
+  isAuthorized: string = localStorage.getItem('isAuthorized')
  
   constructor (public cardsServiceService: CardsServiceService) {
 
   }
-
-// authCheck = () => {
-//   if (localStorage.getItem('isAuthorized')) {
-// return 'DUPA'
-//   }
-
 }
 
