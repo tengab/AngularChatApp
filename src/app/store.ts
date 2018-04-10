@@ -1,18 +1,40 @@
-import {ReduxNotification} from './reduxNotification'
 
+//action
+const ADD_NOTIFICATION = 'ADD_NOTIFICATION'
+let nextNotificationId = 0
 
-export interface ReduxAppState {
-    notifications: ReduxNotification[]
-    lastUpdate: Date
+export const addNotification = (name, lastName, text) => ({
+    type: ADD_NOTIFICATION,
+    id: nextNotificationId++,
+    name,
+    lastName,
+    text,
+})
 
-}
-
-export const INITIAL_STATE: ReduxAppState = {
+//reducer
+const initialState = {
     notifications: [],
-    lastUpdate: null
 }
 
-export function rootReducer(state, action) {
-    return state
-
+export const notificationReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case ADD_NOTIFICATION:
+            console.log('STATE', state.notifications)
+            return {
+                ...state,
+                notifications: state.notifications.concat([
+                    {
+                        id: action.id,
+                        name: action.name,
+                        lastName: action.lastName,
+                        text: action.text
+                    }
+                ])
+            }
+        default:
+            return state
+    }
 }
+
+
+

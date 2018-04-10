@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 
 import { NgRedux, NgReduxModule } from '@angular-redux/store'
-import { ReduxAppState, rootReducer, INITIAL_STATE } from './store'
 
 import { AppComponent } from './app.component'
 import { CardComponent } from './card/card.component'
@@ -16,14 +15,13 @@ import { NotificationItemComponent } from './notification-item/notification-item
 import { DialogComponent } from './dialog/dialog.component';
 import { DialogModalComponent } from './dialog-modal/dialog-modal.component'
 
-
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     NotificationItemComponent,
     DialogComponent,
-    DialogModalComponent
+    DialogModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +37,7 @@ import { DialogModalComponent } from './dialog-modal/dialog-modal.component'
   entryComponents: [DialogModalComponent]
 })
 export class AppModule {
-  constructor(ngRedux: NgRedux<ReduxAppState>) {
-    ngRedux.configureStore(rootReducer, INITIAL_STATE);
+  constructor() {
+    
   }
 }

@@ -1,7 +1,6 @@
 export class Notification {
 
 id: number;
-
 name: string
 lastName: string
 text: string
