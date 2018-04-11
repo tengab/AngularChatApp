@@ -1,3 +1,5 @@
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 
 //action
 const ADD_NOTIFICATION = 'ADD_NOTIFICATION'
@@ -35,6 +37,5 @@ export const notificationReducer = (state = initialState, action) => {
             return state
     }
 }
-
 
 

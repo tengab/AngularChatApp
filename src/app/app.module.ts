@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 
-import { NgRedux, NgReduxModule } from '@angular-redux/store'
+import { NgRedux, NgReduxModule,  } from '@angular-redux/store'
+import {noteReducer} from './reducers/notification.reducer'
 
 import { AppComponent } from './app.component'
 import { CardComponent } from './card/card.component'
@@ -14,6 +15,7 @@ import { MaterialAppModule } from './ngmaterial.module';
 import { NotificationItemComponent } from './notification-item/notification-item.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { DialogModalComponent } from './dialog-modal/dialog-modal.component'
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { DialogModalComponent } from './dialog-modal/dialog-modal.component'
     BrowserAnimationsModule,
     MaterialAppModule,
     FormsModule,
-    NgReduxModule
+    NgReduxModule,
+    StoreModule.provideStore({note: noteReducer})
   ],
   providers: [
     CardsServiceService
