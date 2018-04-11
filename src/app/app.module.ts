@@ -2,8 +2,9 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 
-import { NgRedux, NgReduxModule,  } from '@angular-redux/store'
-import {noteReducer} from './reducers/notification.reducer'
+import { NgRedux, NgReduxModule, } from '@angular-redux/store'
+import { noteReducer } from './reducers/notification.reducer'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component'
 import { CardComponent } from './card/card.component'
@@ -31,7 +32,8 @@ import { StoreModule } from '@ngrx/store';
     MaterialAppModule,
     FormsModule,
     NgReduxModule,
-    StoreModule.provideStore({note: noteReducer})
+    StoreModule.provideStore({ note: noteReducer }),
+    StoreDevtoolsModule.instrumentStore({ maxAge: 10 })
   ],
   providers: [
     CardsServiceService
@@ -41,6 +43,6 @@ import { StoreModule } from '@ngrx/store';
 })
 export class AppModule {
   constructor() {
-    
+
   }
 }

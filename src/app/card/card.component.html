@@ -1,14 +1,14 @@
 <div class="example-container">
   <mat-form-field>
-    <input type='text' [(ngModel)]='notificationName' value={{notificationName}}  matInput placeholder="Wpisz imię">
+    <input type='text' [(ngModel)]='note.name' value={{note.name}}  matInput placeholder="Wpisz imię">
   </mat-form-field>
   <br/>
   <mat-form-field>
-    <input type='text' [(ngModel)]='notificationLastName' value={{notificationLastName}} matInput placeholder="Wpisz nazwisko">
+    <input type='text' [(ngModel)]='note.lastName' value={{note.lastName}} matInput placeholder="Wpisz nazwisko">
   </mat-form-field>
   <br/>
   <mat-form-field>
-    <textarea type='text' [(ngModel)]='notificationText' value={{notificationText}} matInput placeholder="Wpisz treść powiadomienia"></textarea>
+    <textarea type='text' [(ngModel)]='note.text' value={{note.text}} matInput placeholder="Wpisz treść powiadomienia"></textarea>
   </mat-form-field>
 </div>
 
@@ -17,4 +17,19 @@
 <br />
 <br />
 
+<!-- <mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      <strong>Imię:</strong> {{note.name}}</mat-card-title>
+    <mat-card-title>
+      <strong>Nazwisko:</strong> {{note.lastName}}</mat-card-title>
+  </mat-card-header>
+  <br/>
+  <mat-card-content>
+    <p>
+      <strong>Treść:</strong> {{note.text}}
+    </p>
+  </mat-card-content>
+</mat-card>
+<br /> -->
 

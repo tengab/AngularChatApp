@@ -25,7 +25,7 @@ export class DialogModalComponent implements OnInit {
     localStorage.setItem('loginName', this.loginName)
     this.dialogRef.close();
     console.log('Zalogowano', this.loginName)
-    location.reload();
+    // location.reload();
 
   }
 
