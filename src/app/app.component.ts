@@ -6,6 +6,13 @@ import { Component, OnInit, state } from '@angular/core';
 import { State } from '@ngrx/store';
 import { Action } from '@ngrx/store'
 import { StoreModule } from '@ngrx/store'
+import { createStore } from 'redux'
+
+import {noteReducer } from './reducers/notification.reducer'
+
+
+// combne
+const myStore = createStore(noteReducer)
 
 
 @Component({
@@ -18,16 +25,18 @@ export class AppComponent {
   loginName: string = localStorage.getItem('loginName')
   isAuthorized: string = localStorage.getItem('isAuthorized')
 
-  notes: Observable<Note[]>
+  public notes: Observable<Note[]>
 
-  constructor(private store: Store<AppState>) {
-    this.notes = this.store.select(state => state.notes)
+  constructor(public store: Store<AppState>) {
+  //  this.notes = this.store.select('notes')
   }
+
+
 
   id = 0
   note = {} as Note
   addNote() {
-    console.log('name', this.store)
+    console.log('name', myStore.getState().notes)
     this.store.dispatch({
       type: 'ADD_NOTE',
       payload: <Note>{
@@ -38,4 +47,7 @@ export class AppComponent {
       }
     })
   }
+
+showStore = myStore.getState().notes
+
 }
