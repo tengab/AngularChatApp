@@ -7,13 +7,11 @@ import { noteReducer } from './reducers/notification.reducer'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component'
-import { CardComponent } from './card/card.component'
 
-import { CardsServiceService } from './services/cards-service.service'
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialAppModule } from './ngmaterial.module';
-import { NotificationItemComponent } from './notification-item/notification-item.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { DialogModalComponent } from './dialog-modal/dialog-modal.component'
 import { StoreModule } from '@ngrx/store';
@@ -21,8 +19,6 @@ import { StoreModule } from '@ngrx/store';
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
-    NotificationItemComponent,
     DialogComponent,
     DialogModalComponent,
   ],
@@ -32,15 +28,14 @@ import { StoreModule } from '@ngrx/store';
     MaterialAppModule,
     FormsModule,
     NgReduxModule,
-    StoreModule.provideStore({ note: noteReducer }),
+    StoreModule.provideStore({ notesssss: noteReducer }),
     StoreDevtoolsModule.instrumentStore({ maxAge: 10 })
   ],
-  providers: [
-    CardsServiceService
-  ],
+  providers: [],
   bootstrap: [AppComponent],
   entryComponents: [DialogModalComponent]
 })
+
 export class AppModule {
   constructor() {
 

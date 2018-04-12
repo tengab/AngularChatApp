@@ -37,7 +37,24 @@
   </div>
 </div>
 <br/>
-<app-card></app-card>
+<div class="example-container">
+  <mat-form-field>
+    <input type='text' [(ngModel)]='note.name'   matInput placeholder="Wpisz imię">
+  </mat-form-field>
+  <br/>
+  <mat-form-field>
+    <input type='text' [(ngModel)]='note.lastName' value={{note.lastName}} matInput placeholder="Wpisz nazwisko">
+  </mat-form-field>
+  <br/>
+  <mat-form-field>
+    <textarea type='text' [(ngModel)]='note.text' value={{note.text}} matInput placeholder="Wpisz treść powiadomienia"></textarea>
+  </mat-form-field>
+</div>
+
+<button class="add-button" mat-raised-button color="primary" (click)='addNote()' >DODAJ</button>
+<br />
+
+<br />
 <div class="container-fluid text-center pb-5">
   <div style="text-align:center">
     <h2>
@@ -45,6 +62,6 @@
     </h2>
   </div>
 </div>
-<!-- <div *ngFor='let notification of cardsServiceService.getNotifications()'>
-  <app-notification-item [notification]='notification'></app-notification-item>
+<!-- <div *ngFor='let n of state'>
+  <h3>{{ n.name }}</h3>
 </div> -->

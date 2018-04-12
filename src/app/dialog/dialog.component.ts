@@ -17,10 +17,7 @@ export class DialogComponent implements OnInit {
     let dialogRef = this.dialog.open(DialogModalComponent, {
       width: '250px',
       data: { name: this.name }
-      
-    });
-
-  
+          });
   }
 
   ngOnInit() {

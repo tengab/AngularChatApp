@@ -1,29 +1,24 @@
 import { Note } from '../models/note'
 import { Action } from '@ngrx/store'
-import {AppState} from '../models/app.state'
-
+import { AppState } from '../models/app.state'
+import { state } from '@angular/core';
 
 export const ADD_NOTE = 'ADD_NOTE'
 
-// const initialState = {
-//     note: Note[]
-// }
+const initialState: AppState = {
+    notes: []
+}
 
-export function noteReducer(oldState: Note[] = [], action: Action) {
-    let newState = {};
+export function noteReducer(state = initialState, action: Action) {
+
     switch (action.type) {
+        
         case ADD_NOTE:
-        console.log([action.payload], [oldState])
-            newState = {
-                ...oldState, 
-                ...{
-                    note: [oldState].concat([action.payload])
-                }
+            console.log([action.payload], [state.notes], state.notes.concat([action.payload]))
+            return {
+                notes: state.notes.concat([action.payload])
             }
-            break
         default:
-            break
+            return state
     }
-
-    return newState;
 }
