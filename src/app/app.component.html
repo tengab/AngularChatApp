@@ -62,8 +62,22 @@
     </h2>
   </div>
 </div>
-<ul>
-<li *ngFor='let n of sampleArray'>
-  {{ n.name }}
-  </li>
-</ul>
+
+<div *ngFor='let n of notes'>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>
+        <strong>Imię:</strong> {{n.name}}</mat-card-title>
+      <mat-card-title>
+        <strong>Nazwisko:</strong> {{n.lastName}}</mat-card-title>
+    </mat-card-header>
+    <br/>
+    <mat-card-content>
+      <p>
+        <strong>Treść:</strong> {{n.text}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <br />
+  
+

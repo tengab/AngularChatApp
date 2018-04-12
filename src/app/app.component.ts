@@ -9,7 +9,7 @@ import { StoreModule } from '@ngrx/store'
 import { createStore } from 'redux'
 import { noteReducer, myStore } from './reducers/notification.reducer'
 
-const sampleArray = [0, 1, 2, 3, 4, 5, 6]
+
 
 const ADD_NOTE = 'ADD_NOTE'
 let id = 0
@@ -72,11 +72,13 @@ export class AppComponent {
 
   constructor(public store: Store<AppState>) {
 
-    this.notes = this.store.select(state => state.notes)
+  //  this.notes = this.store.select(state => state.notes)
 
     this.store.select(s => s.notes)
       .subscribe((data: any) => {
         console.log('app component got reducer\'s state: ', data.notes)
+        this.notes = data.notes
+        console.log('this.notes', this.notes)
       });
     
   }
@@ -86,7 +88,7 @@ export class AppComponent {
   
   handleClick() {
 
-    this.store.dispatch(addNote('this.theNoteName', 'this.theNoteLastName', 'this.theNoteText'))
+    this.store.dispatch(addNote(this.noteName, this.noteLastName, this.noteText))
 
     console.log('aaaaa', this.notes, myStore.getState().notes)
 
