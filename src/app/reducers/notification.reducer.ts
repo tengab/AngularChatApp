@@ -6,27 +6,20 @@ import { createStore } from 'redux'
 
 export const ADD_NOTE = 'ADD_NOTE'
 
-// { id: 0, name: 'gg', lastName: 'fgh', text: 'fghj' }
-
 let initialState: AppState = {
     notes: []
 }
-
-
 
 export function noteReducer(state = initialState, action: Action) {
 
     switch (action.type) {
         case ADD_NOTE:
-            console.log([action.payload], [state.notes], state.notes.concat([action.payload]))
-            return { ...state,
+            return {
+                ...state,
                 notes: state.notes.concat([action.payload])
             }
-            
         default:
             return state
-            
     }
 }
- 
-export let myStore = createStore(noteReducer)
+

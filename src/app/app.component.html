@@ -15,7 +15,6 @@
 
 <div class="container-fluid text-center pb-5">
   <div style="text-align:right">
-
     <div *ngIf="isAuthorized !== 'true', else sayHello">
       <div>
         <app-dialog></app-dialog>
@@ -39,7 +38,7 @@
 <br/>
 <div class="example-container">
   <mat-form-field>
-    <input type='text' [(ngModel)]='noteName'   matInput placeholder="Wpisz imię">
+    <input type='text' [(ngModel)]='noteName'  noteName='noteName' matInput placeholder="Wpisz imię">
   </mat-form-field>
   <br/>
   <mat-form-field>
@@ -64,7 +63,14 @@
 </div>
 
 <div *ngFor='let n of notes'>
-  <mat-card class="example-card">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>
+            <strong> {{n.name}} {{n.lastName}}</strong> : {{n.text}}</mat-card-title>
+          
+
+
+  <!-- <mat-card class="example-card">
     <mat-card-header>
       <mat-card-title>
         <strong>Imię:</strong> {{n.name}}</mat-card-title>
@@ -78,6 +84,6 @@
       </p>
     </mat-card-content>
   </mat-card>
-  <br />
+  <br /> -->
   
 
