@@ -7,12 +7,24 @@ import { State } from '@ngrx/store';
 import { Action } from '@ngrx/store'
 import { StoreModule } from '@ngrx/store'
 import { createStore } from 'redux'
+import { noteReducer, myStore } from './reducers/notification.reducer'
 
-import {noteReducer } from './reducers/notification.reducer'
+const sampleArray = [0, 1, 2, 3, 4, 5, 6]
 
+const ADD_NOTE = 'ADD_NOTE'
+let id = 0
+ const note = {} as Note
 
-// combne
-const myStore = createStore(noteReducer)
+let addNote = (name: string, lastName: string, text: string) => ({
+  type: ADD_NOTE,
+  payload: <Note>{
+    id: ++id,
+    name,
+    lastName,
+    text
+  }
+})
+
 
 
 @Component({
@@ -24,30 +36,62 @@ export class AppComponent {
 
   loginName: string = localStorage.getItem('loginName')
   isAuthorized: string = localStorage.getItem('isAuthorized')
-
+  sampleArray = [
+    {
+      id: 0,
+      name: 'gg',
+      lastName: 'fgh',
+      text: 'fghj'
+    },
+    {
+      id: 1,
+      name: 'this.theNoteName',
+      lastName: 'this.theNoteLastName',
+      text: 'this.theNoteText'
+    },
+    {
+      id: 2,
+      name: 'this.theNoteName',
+      lastName: 'this.theNoteLastName',
+      text: 'this.theNoteText'
+    },
+    {
+      id: 3,
+      name: 'this.theNoteName',
+      lastName: 'this.theNoteLastName',
+      text: 'this.theNoteText'
+    },
+    {
+      id: 4,
+      name: 'this.theNoteName',
+      lastName: 'this.theNoteLastName',
+      text: 'this.theNoteText'
+    }
+  ]
   public notes: Observable<Note[]>
 
   constructor(public store: Store<AppState>) {
-  //  this.notes = this.store.select('notes')
+
+    this.notes = this.store.select(state => state.notes)
+
+    this.store.select(s => s.notes)
+      .subscribe((data: any) => {
+        console.log('app component got reducer\'s state: ', data.notes)
+      });
+    
   }
 
+  sampleArray2 = myStore.getState().notes
+  
+  
+  handleClick() {
 
+    this.store.dispatch(addNote('this.theNoteName', 'this.theNoteLastName', 'this.theNoteText'))
 
-  id = 0
-  note = {} as Note
-  addNote() {
-    console.log('name', myStore.getState().notes)
-    this.store.dispatch({
-      type: 'ADD_NOTE',
-      payload: <Note>{
-        id: ++this.id,
-        name: this.note.name,
-        lastName: this.note.lastName,
-        text: this.note.text
-      }
-    })
+    console.log('aaaaa', this.notes, myStore.getState().notes)
+
   }
 
-showStore = myStore.getState().notes
+  
 
 }

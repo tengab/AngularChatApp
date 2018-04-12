@@ -28,7 +28,7 @@ import { StoreModule } from '@ngrx/store';
     MaterialAppModule,
     FormsModule,
     NgReduxModule,
-    StoreModule.provideStore({ notesssss: noteReducer }),
+    StoreModule.provideStore({ notes: noteReducer }),
     StoreDevtoolsModule.instrumentStore({ maxAge: 10 })
   ],
   providers: [],

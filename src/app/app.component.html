@@ -39,29 +39,31 @@
 <br/>
 <div class="example-container">
   <mat-form-field>
-    <input type='text' [(ngModel)]='note.name'   matInput placeholder="Wpisz imię">
+    <input type='text' [(ngModel)]='noteName'   matInput placeholder="Wpisz imię">
   </mat-form-field>
   <br/>
   <mat-form-field>
-    <input type='text' [(ngModel)]='note.lastName' value={{note.lastName}} matInput placeholder="Wpisz nazwisko">
+    <input type='text' [(ngModel)]='noteLastName'  matInput placeholder="Wpisz nazwisko">
   </mat-form-field>
   <br/>
   <mat-form-field>
-    <textarea type='text' [(ngModel)]='note.text' value={{note.text}} matInput placeholder="Wpisz treść powiadomienia"></textarea>
+    <textarea type='text' [(ngModel)]='noteText'  matInput placeholder="Wpisz treść powiadomienia"></textarea>
   </mat-form-field>
 </div>
 
-<button class="add-button" mat-raised-button color="primary" (click)='addNote()' >DODAJ</button>
+<button class="add-button" mat-raised-button color="primary" (click)='handleClick()' >DODAJ</button>
 <br />
 
 <br />
 <div class="container-fluid text-center pb-5">
   <div style="text-align:center">
     <h2>
-      Lista powiadomień: {{showStore}}
+      Lista powiadomień: 
     </h2>
   </div>
 </div>
-<!-- <div *ngFor='let n of state'>
-  <h3>{{ n.name }}</h3>
-</div> -->
+<ul>
+<li *ngFor='let n of sampleArray'>
+  {{ n.name }}
+  </li>
+</ul>

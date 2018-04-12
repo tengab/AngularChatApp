@@ -6,11 +6,13 @@ import { createStore } from 'redux'
 
 export const ADD_NOTE = 'ADD_NOTE'
 
+// { id: 0, name: 'gg', lastName: 'fgh', text: 'fghj' }
 
-
-const initialState: AppState = {
-    notes: [{ id: 0, name: 'gg', lastName: 'fgh', text: 'fghj' }]
+let initialState: AppState = {
+    notes: []
 }
+
+
 
 export function noteReducer(state = initialState, action: Action) {
 
@@ -25,7 +27,6 @@ export function noteReducer(state = initialState, action: Action) {
             return state
             
     }
-
-
 }
  
+export let myStore = createStore(noteReducer)
